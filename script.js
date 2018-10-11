@@ -14,8 +14,15 @@ document.addEventListener("DOMContentLoaded", function() {
     searchButton.addEventListener('click', checkParameters);
 });
 
-function checkParameters() {
+function checkParameters(event) {
+    console.log('Button pressed');
+    console.log(event);
+    event.preventDefault();
     let phrase = searchPhrase.value;
+    if(!phrase) {
+        alert('Enter search phrase');
+        return;
+    }
 
     let num = numberArticles.value;
     if (parseInt(num) === 'NaN') {
@@ -24,13 +31,13 @@ function checkParameters() {
     }
 
     let start = startYear.value;
-    if(start.length !== 4 || parseInt(start) === 'NaN') {
+    if(start && (start.length !== 4 || parseInt(start) === 'NaN')) {
         alert('Start Year is not a four digit number');
         return;
     }
 
     let end = endYear.value;
-    if(end.length !== 4 || parseInt(end) === 'NaN') {
+    if(end && (end.length !== 4 || parseInt(end) === 'NaN')) {
         alert('End Year is not a four digit number');
         return;
     }
