@@ -1,17 +1,4 @@
-$( document ).ready(function() {
-
-    $("#submit").on("click", function(event){
-
-    })
-
-    $("#clear").on("click", function(event){
-        $("#topArticles").empty()
-
-        $(".form-control").val('')
-    })
-
-    })
-    
+ 
 const searchPhrase = document.getElementById('searchTerm');
 const numberArticles = document.getElementById('recordNumber');
 const startYear = document.getElementById('startYear');
@@ -22,6 +9,7 @@ const clearButton = document.getElementById('clear');
 
 const resultsDisplay = document.getElementById('topArticles');
 
+var recordAmount = 10;
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -39,24 +27,26 @@ function checkParameters(event) {
     }
 
     let num = numberArticles.value;
-    if (parseInt(num) === 'NaN') {
+    if (parseInt(num) === NaN) {
         alert('Article number is not a number');
         return;
+    } else {
+        recordAmount = num;
     }
 
     let start = startYear.value;
-    if(start && (start.length !== 4 || parseInt(start) === 'NaN')) {
+    if(start && (start.length !== 4 || parseInt(start) === NaN)) {
         alert('Start Year is not a four digit number');
         return;
     }
 
     let end = endYear.value;
-    if(end && (end.length !== 4 || parseInt(end) === 'NaN')) {
+    if(end && (end.length !== 4 || parseInt(end) === NaN)) {
         alert('End Year is not a four digit number');
         return;
     }
 
-    getSearchResults(phrase, num, start, end);
+    getSearchResults(phrase, start, end);
 }
 
 function getSearchResults(phrase, start, end) {
@@ -103,7 +93,7 @@ function getSearchResults(phrase, start, end) {
 function populatePageWithResults(results) {
     console.log(results);
 
-    for(let i = 0; i < results.length; i++) {
+    for(let i = 0; i < recordAmount; i++) {
         console.log(results[i]);
         let container = document.createElement('div');
 
