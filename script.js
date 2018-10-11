@@ -59,7 +59,7 @@ function checkParameters(event) {
     getSearchResults(phrase, num, start, end);
 }
 
-function getSearchResults(phrase, num, start, end) {
+function getSearchResults(phrase, start, end) {
     var xhr = new XMLHttpRequest();
     var url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?';
     let apiKey = 'b9f91d369ff59547cd47b931d8cbc56b:0:74623931';
