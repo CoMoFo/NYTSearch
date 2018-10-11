@@ -1,0 +1,16 @@
+#heading{
+    background-color:navy;
+    text-align:center;
+    color:white;
+    font-size: 50px;
+    padding: 50px;
+    width: 100%;
+}
+
+.card-body a {
+    word-break: break-all;
+  }
+
+  .articleHeadline {
+    line-height: 1.5;
+  }
