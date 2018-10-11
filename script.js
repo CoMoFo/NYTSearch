@@ -14,6 +14,7 @@ var recordAmount = 10;
 
 document.addEventListener("DOMContentLoaded", function() {
     searchButton.addEventListener('click', checkParameters);
+    clearButton.addEventListener('click', clearPage);
 });
 
 function checkParameters(event) {
@@ -92,6 +93,7 @@ function getSearchResults(phrase, start, end) {
 
 function populatePageWithResults(results) {
     console.log(results);
+    resultsDisplay.innerHTML = '';
 
     for(let i = 0; i < recordAmount; i++) {
         console.log(results[i]);
@@ -118,4 +120,10 @@ function populatePageWithResults(results) {
     }
 
     //resultsDisplay.textContent = JSON.stringify(results);
+}
+
+function clearPage() {
+    $("#topArticles").empty()
+
+    $(".form-control").val('')
 }
