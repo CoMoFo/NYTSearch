@@ -9,6 +9,7 @@
     <title>nyt</title>
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -20,15 +21,15 @@
         </div>
         <div class="card-body">
             <p class="card-text">Search Term: </p>
-            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" id=searchTerm placeholder="" aria-label="" aria-describedby="basic-addon1">
             <p class="card-text">Number of Records to Retrieve: </p>
-            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" id=recordNumber placeholder="" aria-label="" aria-describedby="basic-addon1">
             <p class="card-text">Start Year(Optional): </p>
-            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" id=startYear placeholder="" aria-label="" aria-describedby="basic-addon1">
             <p class="card-text">End Year(Optional): </p>
-            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-            <a href="#" class="btn btn-primary">Search</a>
-            <a href="#" class="btn btn-primary">Clear Results</a>
+            <input type="text" class="form-control" id=endYear placeholder="" aria-label="" aria-describedby="basic-addon1">
+            <a href="#" class="btn btn-primary" id=submit>Search</a>
+            <a href="#" class="btn btn-primary" id=clear>Clear Results</a>
         </div>
     </div>
     <div class="card">
@@ -36,6 +37,23 @@
             Top Articles
         </div>
     </div>
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+
+        $("#submit").on("click", function(event){
+
+        })
+
+        $("#clear").on("click", function(event){
+            $(".input").empty()
+
+            $(".form-control").empty()
+        })
+
+        })
+
+    </script>
     
 </body>
 </html>
