@@ -1,3 +1,17 @@
+$( document ).ready(function() {
+
+    $("#submit").on("click", function(event){
+
+    })
+
+    $("#clear").on("click", function(event){
+        $("#topArticles").empty()
+
+        $(".form-control").val('')
+    })
+
+    })
+    
 const searchPhrase = document.getElementById('searchTerm');
 const numberArticles = document.getElementById('recordNumber');
 const startYear = document.getElementById('startYear');
